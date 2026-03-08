@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Management System</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="top-nav">
+            <h1><i class="fa-solid fa-boxes-stacked"></i> Warehouse System</h1>
+            <p class="subtitle">Manajemen Inventaris Profesional</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-grid">
+            
+            <!-- Left Column: Add Product Form -->
+            <section class="card glass form-card">
+                <h2><i class="fa-solid fa-plus-circle"></i> Tambah Produk</h2>
+                <form id="productForm">
+                    <div class="input-group floating-label">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label>Nama Produk</label>
+                    </div>
+                    <div class="input-group floating-label">
+                        <input type="text" id="category" placeholder=" " required>
+                        <label>Kategori</label>
+                    </div>
+                    <div class="input-grid">
+                        <div class="input-group floating-label">
+                            <input type="number" id="qty" placeholder=" " required>
+                            <label>Kuantitas</label>
+                        </div>
+                        <div class="input-group floating-label">
+                            <input type="number" id="price" step="0.01" placeholder=" " required>
+                            <label>Harga (Rp)</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="btnSave">
+                        <i class="fa-solid fa-save"></i> Simpan Produk
+                    </button>
+                </form>
+            </section>
+
+            <!-- Right Column: Product Table -->
+            <section class="card glass table-card">
+                <div class="card-header">
+                    <h2><i class="fa-solid fa-list"></i> Daftar Barang</h2>
+                    <button id="btnExport" class="btn btn-secondary tooltip" data-tooltip="Ekspor ke .csv">
+                        <i class="fa-solid fa-file-csv"></i> Ekspor
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nama Produk</th>
+                                <th>Kategori</th>
+                                <th>Qty</th>
+                                <th>Harga</th>
+                                <th class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody">
+                            <!-- Data dimuat via JavaScript -->
+                        </tbody>
+                    </table>
+                    <!-- Empty State -->
+                    <div id="emptyState" class="empty-state" style="display: none;">
+                        <i class="fa-solid fa-box-open empty-icon"></i>
+                        <p>Belum ada produk di gudang.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

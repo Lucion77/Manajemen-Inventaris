@@ -1,0 +1,7 @@
+com\wms\repository\SQLiteProductRepository.class
+com\wms\model\BaseEntity.class
+com\wms\repository\Repository.class
+com\wms\model\Product.class
+com\wms\service\ReportService.class
+com\wms\util\DatabaseConfig.class
+com\wms\main\App.class
